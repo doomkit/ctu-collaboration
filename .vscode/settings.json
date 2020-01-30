@@ -25,5 +25,6 @@
   "prettier.printWidth": 80,
   "prettier.trailingComma": "es5",
   "editor.formatOnSave": true,
-  "html.format.enable": false
+  "html.format.enable": false,
+  "vetur.format.defaultFormatter.html": "prettier"
 }
