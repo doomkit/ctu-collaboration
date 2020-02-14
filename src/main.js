@@ -7,6 +7,8 @@ import Home from './components/pages/Home.vue';
 import Statistics from './components/pages/Statistics.vue';
 import Test from './components/pages/Test.vue';
 
+require('@fortawesome/fontawesome-free/js/all.js');
+
 const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
