@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="absolute top-0 left-0 w-full z-10 flex items-center bg-white shadow-md">
-      <nav class="container mx-auto flex items-center justify-between flex-wrap p-2">
+      <nav class="container p-2 mx-auto flex items-center justify-between flex-wrap p-2">
         <div class="mr-6">
           <img
             class="h-10 w-auto select-none cursor-pointer"

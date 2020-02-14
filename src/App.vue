@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <main class="pt-24 pb-16 lg:pt-28 w-full">
+    <main class="pt-24 pb-16 lg:pt-28 w-full bg-gray-100">
       <transition
         name="fade"
         mode="out-in"
