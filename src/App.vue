@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <Header />
-    <transition
-      name="fade"
-      mode="out-in"
-      @beforeLeave="beforeLeave"
-      @enter="enter"
-      @afterEnter="afterEnter"
-    >
-      <router-view />
-    </transition>
+    <main class="pt-24 pb-16 lg:pt-28 w-full">
+      <transition
+        name="fade"
+        mode="out-in"
+        @beforeLeave="beforeLeave"
+        @enter="enter"
+        @afterEnter="afterEnter"
+      >
+        <router-view />
+      </transition>
+    </main>
     <Footer />
   </div>
 </template>
@@ -50,7 +52,6 @@ export default {
 </script>
 
 <style lang="scss">
-// importing global styles
 @import '../style';
 
 #app {
