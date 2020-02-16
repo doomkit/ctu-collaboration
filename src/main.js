@@ -9,6 +9,11 @@ import Test from './components/pages/Test.vue';
 
 require('@fortawesome/fontawesome-free/js/all.js');
 
+// TODO: change before going to production
+const environment = {
+  production: false
+};
+
 const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
@@ -25,3 +30,12 @@ new Vue({
   router,
   render: h => h(App)
 }).$mount('#app');
+
+if (environment.production) {
+  Vue.config = {
+    ...Vue.config,
+    silent: true,
+    devtools: false,
+    productionTip: false
+  };
+}
