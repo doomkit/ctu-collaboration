@@ -1,6 +1,6 @@
 <template>
   <div :style="{ background: alternativeBackground ? '#E4E4E4' : 'none' }">
-    <div class="container mx-auto px-4 lg:px-16 py-8">
+    <div class="container mx-auto px-4 lg:px-16 pt-8 pb-16">
       <h2 class="font-bold text-center text-2xl md:text-3xl lg:text-4xl mb-8">
         {{ $t('home.section.title') }}
       </h2>

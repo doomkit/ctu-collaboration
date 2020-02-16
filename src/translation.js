@@ -8,6 +8,16 @@ export const messages = {
       statistics: 'Statistics',
       about: 'About'
     },
+    footer: {
+      university: 'University',
+      cvut: {
+        university: 'CZECH TECHNICAL UNIVERSITY IN PRAGUE',
+        faculty: 'Faculty of Electrical Engineering',
+        address: 'Technická 2, 166 27, Praha 6 - Dejvice'
+      },
+      contacts: 'Contacts',
+      links: 'Links'
+    },
     home: {
       welcome: {
         title: 'University-Buiseness Collaboration Guide',
@@ -36,14 +46,33 @@ export const messages = {
       statistics: 'Statistika',
       about: 'O projektu'
     },
+    footer: {
+      university: 'Univerzita',
+      cvut: {
+        university: 'ČESKÉ VYSOKÉ UČENÍ TECHNICKÉ V PRAZE',
+        faculty: 'Fakulta elektrotechnická',
+        address: 'Technická 2, 166 27, Praha 6 - Dejvice'
+      },
+      contacts: 'Kontakty',
+      links: 'Odkazy'
+    },
     home: {
       welcome: {
-        title: 'University-Buiseness Collaboration Guide',
+        title: 'Průvodce Spoluprací Univerzity s Průmyslem',
         text:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo, magnam consequuntur earum dicta molestiae animi nemo voluptatum doloribus accusamus libero maxime laborum mollitia soluta laudantium dolorem a expedita ipsam?',
         button: 'Test',
         alternative_text: 'Or explore the ',
         alternative_link: 'statistics of previous results '
+      },
+      footer: {
+        cvut: {
+          university: 'CZECH TECHNICAL UNIVERSITY IN PRAGUE',
+          faculty: 'Faculty of Electrical Engineering',
+          address: 'Technická 2, 166 27, Praha 6 - Dejvice'
+        },
+        contacts: 'Contacts',
+        links: 'Links'
       },
       section: {
         title: 'What is University-Buisienss Collaboration?',
