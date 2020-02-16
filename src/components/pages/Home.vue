@@ -1,7 +1,20 @@
 <template>
-  <h1>This is Home page!</h1>
+  <div>
+    <Welcome />
+    <Section :alternativeBackground="false" />
+  </div>
 </template>
 
-<script></script>
+<script>
+import Welcome from './Home/Welcome';
+import Section from './Home/Section';
+
+export default {
+  components: {
+    Welcome,
+    Section
+  }
+};
+</script>
 
 <style scoped lang="scss"></style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <main class="pt-24 pb-16 lg:pt-28 w-full bg-gray-100">
+    <main class="lg:pt-28 w-full">
       <transition
         name="fade"
         mode="out-in"
@@ -58,7 +58,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 

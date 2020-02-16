@@ -27,7 +27,7 @@
         </label>
       </li>
     </ol>
-    <div class="flex justify-end mt-8">
+    <div class="flex justify-center sm:justify-end mt-8">
       <button
         class="text-white font-bold py-2 px-4 mr-4 rounded focus:outline-none"
         :class="[

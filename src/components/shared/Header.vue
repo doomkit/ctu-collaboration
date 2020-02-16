@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="absolute top-0 left-0 w-full z-10 flex items-center bg-white shadow-md">
-      <nav class="container p-2 mx-auto flex items-center justify-between flex-wrap p-2">
+      <nav class="container p-2 mx-auto flex items-center justify-between flex-wrap lg:px-16">
         <div class="mr-6">
           <img
             class="h-10 w-auto select-none cursor-pointer"
@@ -31,7 +31,7 @@
           :class="{ 'hidden': !show_menu }"
           class="w-full block flex-grow lg:flex lg:items-center lg:w-auto"
         >
-          <div class="text-sm lg:flex-grow" @click="show_menu = false">
+          <div class="text-sm text-center lg:flex-grow" @click="show_menu = false">
             <router-link
               v-for="link in links"
               :key="link.path"
@@ -40,7 +40,7 @@
               exact
             >
               <a
-                class="block mt-4 mr-4 lg:inline-block lg:mt-0
+                class="block mt-4 lg:mr-4 text-center lg:inline-block lg:mt-0
 										text-blue-700 hover:text-blue-900"
                 :class="{ 'font-bold': isActive }"
                 :href="href"
@@ -50,7 +50,7 @@
               </a>
             </router-link>
           </div>
-          <div class="flex flex-row justify-center mt-4 mr-4 lg:mt-0">
+          <div class="flex flex-row justify-center mt-4 lg:mt-0 lg:mr-0">
             <img
               v-for="(lang, index) in languages"
               :key="lang.alt"

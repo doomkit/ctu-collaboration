@@ -1,26 +1,28 @@
 <template>
-  <div class="container m-auto p-4 px-4 md:px-16">
-    <div class="flex justify-between">
-      <h1 class="text-4xl font-semibold text-left inline-block">Collaboration Test</h1>
-      <div class="hidden sm:flex flex-col justify-center text-blue-700">
-        <span>~10 min <i class="far fa-clock"></i></span>
+  <div class="bg-gray-100">
+    <div class="container m-auto px-4 py-20 lg:px-16">
+      <div class="flex justify-between">
+        <h1 class="text-4xl font-semibold text-left inline-block">Collaboration Test</h1>
+        <div class="hidden sm:flex flex-col justify-center text-blue-700">
+          <span>~10 min <i class="far fa-clock"></i></span>
+        </div>
       </div>
-    </div>
-    <p class="text-left mb-8">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere molestias, officia quis
-      expedita minus perspiciatis id eos recusandae!
-    </p>
+      <p class="text-left mb-8">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere molestias, officia quis
+        expedita minus perspiciatis id eos recusandae!
+      </p>
 
-    <div class="test container rounded shadow-xl p-8 bg-white mx-auto">
-      <Start v-if="!started" @start="started = true" />
-      <div v-if="started">
-        <Progress />
-        <Question
-          :question="questions[0]"
-          :firstQuestion="true"
-          @next="onNext($event)"
-          @prevoius="onPrevoius($event)"
-        />
+      <div class="test container rounded shadow-xl p-8 bg-white mx-auto">
+        <Start v-if="!started" @start="started = true" />
+        <div v-if="started">
+          <Progress />
+          <Question
+            :question="questions[0]"
+            :firstQuestion="true"
+            @next="onNext($event)"
+            @prevoius="onPrevoius($event)"
+          />
+        </div>
       </div>
     </div>
   </div>
