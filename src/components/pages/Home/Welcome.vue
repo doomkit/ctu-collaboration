@@ -4,11 +4,12 @@
       <div class="container flex flex-row mx-auto px-4 lg:px-16">
         <div class="sm:w-1/2">
           <h1
-            class="text-left text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight py-8 lg:-mr-8 sm:-mr-20"
+            class="text-center sm:text-left text-3xl md:text-4xl lg:text-5xl font-extrabold
+							leading-tight py-8 lg:-mr-8 sm:-mr-20"
           >
             University-Buiseness Collaboration Guide
           </h1>
-          <p class="text-left text-lg pb-8 sm:pr-8">
+          <p class="text-center sm:text-left lg:text-lg pb-8 sm:pr-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo, magnam consequuntur
             earum dicta molestiae animi nemo voluptatum doloribus accusamus libero maxime laborum
             mollitia soluta laudantium dolorem a expedita ipsam?

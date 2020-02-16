@@ -40,7 +40,7 @@
               exact
             >
               <a
-                class="block mt-4 lg:mr-4 text-center lg:inline-block lg:mt-0
+                class="block mt-4 lg:mr-4 text-center text-base lg:inline-block lg:mt-0
 										text-blue-700 hover:text-blue-900"
                 :class="{ 'font-bold': isActive }"
                 :href="href"
