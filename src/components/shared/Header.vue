@@ -46,20 +46,20 @@
                 :href="href"
                 @click="navigate"
               >
-                {{ link.text }}
+                {{ $t(link.text) }}
               </a>
             </router-link>
           </div>
           <div class="flex flex-row justify-center mt-4 lg:mt-0 lg:mr-0">
             <img
               v-for="(lang, index) in languages"
-              :key="lang.alt"
+              :key="lang.locale"
               :index="index"
               :class="{ 'ml-5': index !== 0 }"
               class="h-6 w-auto select-none cursor-pointer rounded"
-              :src="lang.selected ? lang.img : lang.disable_img"
-              :alt="lang.alt"
-              v-on:click="selectLanguage(lang.alt)"
+              :src="$root.$i18n.locale == lang.locale ? lang.img : lang.disable_img"
+              :alt="lang.locale"
+              v-on:click="selectLanguage(lang.locale)"
             />
           </div>
         </div>
@@ -79,31 +79,30 @@ export default {
     return {
       languages: [
         {
-          alt: 'cz',
+          locale: 'cz',
           img: require('../../assets/languages/cz.jpeg'),
-          disable_img: require('../../assets/languages/cz_disabled.jpeg'),
-          selected: false
+          disable_img: require('../../assets/languages/cz_disabled.jpeg')
         },
         {
-          alt: 'en',
+          locale: 'en',
           img: require('../../assets/languages/uk.jpeg'),
-          disable_img: require('../../assets/languages/uk_disabled.jpeg'),
-          selected: true
+          disable_img: require('../../assets/languages/uk_disabled.jpeg')
         }
       ],
       links: [
-        { path: '/', text: 'Home' },
-        { path: '/test', text: 'Test' },
-        { path: '/statistics', text: 'Statistics' },
-        { path: '/about', text: 'About' }
+        { path: '/', text: 'navbar.home' },
+        { path: '/test', text: 'navbar.test' },
+        { path: '/statistics', text: 'navbar.statistics' },
+        { path: '/about', text: 'navbar.about' }
       ],
       show_menu: false
     };
   },
   methods: {
     selectLanguage(lang) {
-      this.languages.forEach(elem => (elem.selected = lang === elem.alt));
-      // TODO: use i18n service
+      this.languages.forEach(elem => (elem.selected = lang === elem.locale));
+      this.$root.$i18n.locale = lang;
+      sessionStorage.setItem('locale', lang);
     },
     toggleMenu() {
       this.show_menu = !this.show_menu;

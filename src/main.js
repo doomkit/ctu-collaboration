@@ -1,13 +1,17 @@
 import Vue from 'vue';
 import App from './App.vue';
 import VueRouter from 'vue-router';
+import VueI18n from 'vue-i18n';
+require('@fortawesome/fontawesome-free/js/all.js');
 
+import * as translation from './translation';
 import About from './components/pages/About.vue';
 import Home from './components/pages/Home.vue';
 import Statistics from './components/pages/Statistics.vue';
 import Test from './components/pages/Test.vue';
 
-require('@fortawesome/fontawesome-free/js/all.js');
+Vue.use(VueRouter);
+Vue.use(VueI18n);
 
 // TODO: change before going to production
 const environment = {
@@ -22,14 +26,14 @@ const routes = [
 ];
 
 const router = new VueRouter({ mode: 'history', routes });
-
-Vue.config.productionTip = false;
-Vue.use(VueRouter);
+const i18n = new VueI18n(translation.options);
 
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
+  i18n
 }).$mount('#app');
+Vue.config.productionTip = false;
 
 if (environment.production) {
   Vue.config = {

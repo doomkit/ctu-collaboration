@@ -7,12 +7,10 @@
             class="text-center sm:text-left text-3xl md:text-4xl lg:text-5xl font-extrabold
 							leading-tight py-8 lg:-mr-8 sm:-mr-20"
           >
-            University-Buiseness Collaboration Guide
+            {{ $t('home.welcome.title') }}
           </h1>
           <p class="text-center sm:text-left lg:text-lg pb-8 sm:pr-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo, magnam consequuntur
-            earum dicta molestiae animi nemo voluptatum doloribus accusamus libero maxime laborum
-            mollitia soluta laudantium dolorem a expedita ipsam?
+            {{ $t('home.welcome.text') }}
           </p>
         </div>
         <div class="hidden w-1/2 -mb-24 lg:-mb-32 sm:flex flex-col justify-end">
@@ -33,19 +31,19 @@
             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-10 mb-2 rounded focus:outline-none"
             @click="navigate"
           >
-            Test
+            {{ $t('home.welcome.button') }}
           </button>
         </router-link>
         <div>
           <router-link :to="'statistics'" v-slot="{ href, route, navigate }" exact>
             <span>
-              Or explore the
+              {{ $t('home.welcome.alternative_text') }}
               <a
                 :href="href"
                 @click="navigate"
                 class="text-blue-600 hover:text-blue-800 font-medium"
               >
-                statistics of previous results <i class="fas fa-arrow-right text-sm"></i>
+                {{ $t('home.welcome.alternative_link') }}<i class="fas fa-arrow-right text-sm"></i>
               </a>
             </span>
           </router-link>
