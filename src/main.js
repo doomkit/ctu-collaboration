@@ -3,6 +3,7 @@ import App from './App.vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 require('@fortawesome/fontawesome-free/js/all.js');
+require('chartjs-chart-radial-gauge');
 
 import * as translation from './translation';
 import About from './components/pages/About.vue';
