@@ -26,7 +26,19 @@ const routes = [
   { path: '/test', component: Test }
 ];
 
-const router = new VueRouter({ mode: 'history', routes });
+const router = new VueRouter({
+  mode: 'history',
+  routes,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return window.scrollTo({
+        top: document.querySelector(to.hash).offsetTop,
+        behavior: 'smooth'
+      });
+    }
+    return window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
 const i18n = new VueI18n(translation.options);
 
 new Vue({
