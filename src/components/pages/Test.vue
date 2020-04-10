@@ -15,12 +15,12 @@
       <div class="test container rounded shadow-xl p-8 bg-white mx-auto">
         <Start v-if="!started" @start="started = true" />
         <div v-if="started">
-          <Progress />
+          <Progress :total="questions.length" :count="answers.length" />
           <Question
-            :question="questions[0]"
-            :firstQuestion="true"
+            :question="questions[currentIndex]"
+            :index="currentIndex"
             @next="onNext($event)"
-            @prevoius="onPrevoius($event)"
+            @previous="onPrevoius($event)"
           />
         </div>
       </div>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import Start from './Questionare/Start';
 import Progress from './Questionare/Progress';
 import Question from './Questionare/Question';
@@ -42,20 +42,47 @@ export default {
   },
   data() {
     return {
-      questions: [],
+      questions: Object,
+      currentIndex: 0,
+      questionId: 0,
+      answers: [],
       started: false
     };
   },
   created() {
-    axios.get('http://localhost:3000/questions').then(response => (this.questions = response.data));
+    const _answers = JSON.parse(sessionStorage.getItem('answers'));
+    console.log(_answers);
+    if (_answers) {
+      this.answers = _answers;
+    }
+    // axios.get('http://localhost:3000/questions').then(response => (this.questions = response.data));
   },
   methods: {
-    onNext(option_id) {
-      console.log(option_id);
+    onNext(option) {
+      this.saveAnswer(this.questionId, option.answer);
+      if (this.currentIndex + 1 >= this.questions.length) {
+        // Show results
+        return;
+      }
+      this.currentIndex++;
     },
     onPrevoius() {
-      console.log('Previous');
+      if (this.currentIndex - 1 < 0) {
+        return;
+      }
+      this.currentIndex--;
+    },
+    saveAnswer(question_id, option_id) {
+      const answer = { question_id, option_id };
+      this.answers = [...this.answers, answer];
+      console.log(this.answers);
+      sessionStorage.setItem('answers', JSON.stringify(this.answers));
     }
+    // (answeredIds, questions) {
+    //   return questions.filter(question => {
+    //     return !!answeredIds.find(id => id === question.id);
+    //   });
+    // }
   }
 };
 </script>
