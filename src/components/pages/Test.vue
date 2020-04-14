@@ -31,7 +31,7 @@
 <script>
 // import axios from 'axios';
 import Start from './Questionare/Start';
-import Progress from './Questionare/Progress';
+import Progress from '../shared/Progress';
 import Question from './Questionare/Question';
 
 export default {

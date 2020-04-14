@@ -9,9 +9,30 @@
         expedita minus perspiciatis id eos recusandae!
       </p>
       <div class="test container rounded shadow-xl p-8 bg-white mx-auto mb-8">
+        <h2 class="text-2xl">Average collaboration profile</h2>
         <div class="flex flex-row justify-around flex-wrap">
-          <div class="w-full sm:w-5/12 sm:mr-2 mb-8 sm:mb-0"><AverageRadar /></div>
-          <div class="w-full sm:w-5/12 sm:ml-2"><CompareRadar /></div>
+          <div class="w-full sm:w-5/12 sm:mr-2 mb-8 sm:mb-0">
+            <AverageRadar />
+          </div>
+          <div class="w-full sm:w-5/12 sm:ml-2 flex flex-col justify-between">
+            <div class="">
+              <h3 class="my-2">Average test duration<span class="text-red-600">*</span>:</h3>
+              <div class="bg-gray-200 text-gray-700 rounded py-2 px-4">
+                <span>20:10</span>
+              </div>
+              <h3 class="my-2">Tests completed:</h3>
+              <div class="bg-gray-200 text-gray-700 rounded py-2 px-4">
+                <span>10</span>
+              </div>
+              <h3 class="my-2">Last test completed:</h3>
+              <div class="bg-gray-200 text-gray-700 rounded py-2 px-4">
+                <span>{{ new Date() }}</span>
+              </div>
+            </div>
+            <div class="text-gray-500 text-sm">
+              <p>* Durations longer than 60min are ignored</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="test container flex flex-col lg:flex-row mx-auto">
@@ -41,13 +62,11 @@
 
 <script>
 import AverageRadar from './Statistics/AverageRadar';
-import CompareRadar from './Statistics/CompareRadar';
 import SuccessChart from './Statistics/SuccessChart';
 
 export default {
   components: {
     AverageRadar,
-    CompareRadar,
     SuccessChart
   },
   data() {

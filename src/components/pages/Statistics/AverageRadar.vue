@@ -3,42 +3,67 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { env } from '../../../environment/env';
 import RadarChart from '../Charts/RadarChart';
+
 export default {
   components: {
     RadarChart
   },
   data() {
     return {
-      data: {
-        labels: ['Param1', 'Param2', 'Param3', 'Param4', 'Param5', 'Param6', 'Param7', 'Param8'],
-        datasets: [
-          {
-            label: '1',
-            backgroundColor: 'rgba(131, 187, 214, 0.3)',
-            borderColor: '#1D84B5',
-            pointBackgroundColor: '#1D84B5',
-            lineTension: 0.4,
-            data: [8, 7, 4, 7, 3, 7, 4, 6]
-          }
-        ]
-      },
+      data: undefined,
       options: {
         tooltips: {
-          opacity: 0.1
+          opacity: 0.1,
+          displayColors: false,
+          callbacks: {
+            title: function() {}
+          }
         },
         legend: {
           display: false
         },
         scale: {
+          pointLabels: {
+            fontFamily: "'Avenir', Helvetica, Arial, sans-serif",
+            fontSize: 13
+          },
           ticks: {
             max: 10,
-            beginAtZero: true
+            beginAtZero: true,
+            stepSize: 2
           },
           gridLines: { circular: true }
         }
       }
     };
+  },
+  created() {
+    axios.get(`${env.base_url}/statistics/avg-profile`).then(response => {
+      if (!response || !response.data) {
+        return;
+      }
+      let labels = [];
+      let values = [];
+      for (let key in response.data) {
+        labels = [...labels, key];
+        values = [...values, response.data[key]];
+      }
+      this.data = {
+        labels,
+        datasets: [
+          {
+            backgroundColor: 'rgba(131, 187, 214, 0.3)',
+            borderColor: '#1D84B5',
+            pointBackgroundColor: '#1D84B5',
+            lineTension: 0.4,
+            data: values
+          }
+        ]
+      };
+    });
   }
 };
 </script>
