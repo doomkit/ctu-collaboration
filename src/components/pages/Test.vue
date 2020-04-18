@@ -12,83 +12,137 @@
         expedita minus perspiciatis id eos recusandae!
       </p>
 
-      <div class="test container rounded shadow-xl p-8 bg-white mx-auto">
-        <Start v-if="!started" @start="started = true" />
-        <div v-if="started">
-          <Progress :total="questions.length" :count="answers.length" />
-          <Question
-            :question="questions[currentIndex]"
-            :index="currentIndex"
-            @next="onNext($event)"
-            @previous="onPrevoius($event)"
-          />
-        </div>
+      <div
+        class="test flex flex-col justify-center container rounded shadow-xl p-6 md:p-8 bg-white mx-auto"
+      >
+        <transition
+          name="fade"
+          mode="out-in"
+          @beforeLeave="beforeLeave"
+          @enter="enter"
+          @afterEnter="afterEnter"
+        >
+          <Start v-if="!state" @start="startTest()" />
+          <div v-if="state">
+            <Question
+              v-if="state"
+              :state="state"
+              @next="onNext($event)"
+              @previous="onPrevoius($event)"
+            />
+          </div>
+        </transition>
       </div>
+      <button
+        class="text-white font-light text-sm py-2 mt-4 rounded focus:outline-none bg-transparent"
+        :class="[!state ? 'text-gray-400 cursor-not-allowed' : 'text-blue-600 hover:text-blue-700']"
+        :disabled="!state"
+        @click="restartTest()"
+      >
+        <i class="fas fa-redo"></i> Restart test
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
+import moment from 'moment';
+import { env } from '../../environment/env';
+
 import Start from './Questionare/Start';
-import Progress from '../shared/Progress';
 import Question from './Questionare/Question';
 
 export default {
   components: {
     Start,
-    Progress,
     Question
   },
   data() {
     return {
-      questions: Object,
-      currentIndex: 0,
-      questionId: 0,
-      answers: [],
-      started: false
+      state: null,
+      prevHeight: 0
     };
   },
   created() {
-    const _answers = JSON.parse(sessionStorage.getItem('answers'));
-    console.log(_answers);
-    if (_answers) {
-      this.answers = _answers;
+    let state = sessionStorage.getItem('state');
+    if (state) {
+      this.state = JSON.parse(state);
     }
-    // axios.get('http://localhost:3000/questions').then(response => (this.questions = response.data));
   },
   methods: {
-    onNext(option) {
-      this.saveAnswer(this.questionId, option.answer);
-      if (this.currentIndex + 1 >= this.questions.length) {
-        // Show results
-        return;
-      }
-      this.currentIndex++;
+    startTest() {
+      this.updateState({ start_time: moment.now() });
+      this.loadQuestion();
     },
-    onPrevoius() {
-      if (this.currentIndex - 1 < 0) {
-        return;
+    onNext({ state, answer }) {
+      if (!state.answers) {
+        state.answers = [];
       }
-      this.currentIndex--;
+      let check = !!state.answers.find(a => a.question_id === answer.question_id);
+      if (!check) {
+        state.answers = [...state.answers, answer];
+        this.updateState(state);
+      }
+      this.loadQuestion();
     },
-    saveAnswer(question_id, option_id) {
-      const answer = { question_id, option_id };
-      this.answers = [...this.answers, answer];
-      console.log(this.answers);
-      sessionStorage.setItem('answers', JSON.stringify(this.answers));
+    loadQuestion() {
+      axios.post(`${env.base_url}/test`, this.state).then(response => {
+        this.state = response.data;
+        this.updateState(this.state);
+        if (this.state.end_time) {
+          console.log('END');
+          console.log(this.state);
+        }
+      });
+    },
+    updateState(state) {
+      this.state = state;
+      sessionStorage.setItem('state', JSON.stringify(state));
+    },
+    restartTest() {
+      const en_confirm_text = 'Are you sure you want to start over?';
+      const cz_confirm_text = 'Opravdu chcete začít znovu?';
+      let confirmed = confirm(this.$i18n.locale === 'en' ? en_confirm_text : cz_confirm_text);
+      if (confirmed) {
+        sessionStorage.removeItem('state');
+        this.state = null;
+      }
+    },
+    // Animations
+    beforeLeave(element) {
+      this.prevHeight = getComputedStyle(element).height;
+    },
+    enter(element) {
+      const { height } = getComputedStyle(element);
+
+      element.style.height = this.prevHeight;
+
+      setTimeout(() => {
+        element.style.height = height;
+      });
+    },
+    afterEnter(element) {
+      element.style.height = 'auto';
     }
-    // (answeredIds, questions) {
-    //   return questions.filter(question => {
-    //     return !!answeredIds.find(id => id === question.id);
-    //   });
-    // }
   }
 };
 </script>
 
 <style scoped lang="scss">
 .test {
-  min-height: 400px;
+  min-height: 350px;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: height, opacity;
+  transition-timing-function: ease;
+  overflow: hidden;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 </style>

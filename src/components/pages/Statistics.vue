@@ -18,15 +18,15 @@
             <div class="">
               <h3 class="my-2">Average test duration<span class="text-red-600">*</span>:</h3>
               <div class="bg-gray-200 text-gray-700 rounded py-2 px-4">
-                <span>20:10</span>
+                <span>{{ avg_duration }}</span>
               </div>
               <h3 class="my-2">Tests completed:</h3>
               <div class="bg-gray-200 text-gray-700 rounded py-2 px-4">
-                <span>10</span>
+                <span>{{ total }}</span>
               </div>
               <h3 class="my-2">Last test completed:</h3>
               <div class="bg-gray-200 text-gray-700 rounded py-2 px-4">
-                <span>{{ new Date() }}</span>
+                <span>{{ last_completion }}</span>
               </div>
             </div>
             <div class="text-gray-500 text-sm">
@@ -61,6 +61,10 @@
 </template>
 
 <script>
+import moment from 'moment';
+import axios from 'axios';
+import { env } from '../../environment/env';
+
 import AverageRadar from './Statistics/AverageRadar';
 import SuccessChart from './Statistics/SuccessChart';
 
@@ -70,7 +74,20 @@ export default {
     SuccessChart
   },
   data() {
-    return {};
+    return {
+      avg_duration: null,
+      total: null,
+      last_completion: null
+    };
+  },
+  async created() {
+    axios.get(`${env.base_url}/statistics/avg-time-spent`).then(response => {
+      let min = Math.floor(response.data.avg_duration / 60);
+      let sec = response.data.avg_duration % 60;
+      this.avg_duration = (min < 10 ? '0' : '') + min + ':' + (sec < 10 ? '0' : '') + sec;
+      this.total = response.data.total;
+      this.last_completion = moment(response.data.last_completion).format('MMM DD YYYY, hh:mm');
+    });
   }
 };
 </script>

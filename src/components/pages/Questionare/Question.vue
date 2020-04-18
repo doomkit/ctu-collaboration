@@ -1,20 +1,23 @@
 <template>
-  <div>
-    <h2 class="text-xl font-medium text-center mt-4 mb-8 mx-8">Question {{ index + 1 }}</h2>
-    <p class="text-lg text-left mb-8 mx-8">
-      {{ question.text }}
+  <div v-if="state" v-on:keyup.enter="next()">
+    <h2 class="text-xl font-medium text-center mt-0 md:mt-4 mb-4 md:mb-8 mx-8 ">
+      {{ $t('test.question') }} {{ state.answers ? state.answers.length + 1 : 1 }}
+    </h2>
+    <p v-if="state.question" class="text-lg text-left mb-8 md:mx-8">
+      {{ $i18n.locale === 'en' ? state.question.content_en : state.question.content_cz }}
     </p>
-    <ol class="mx-8">
-      <li v-for="option in question.options" :key="option.id">
-        <label class="flex mb-4 cursor-pointer p-2">
+
+    <ol v-if="state.question" class="md:mx-8">
+      <li v-for="option in state.question.answers" :key="option.id">
+        <label class="flex mb-2 md:mb-4 cursor-pointer p-2">
           <input
             type="radio"
             name="test"
             class="absolute opacity-0 cursor-pointer"
-            :value="option.id"
+            :value="option"
             v-model="selected"
           />
-          <template v-if="option.id === selected">
+          <template v-if="selected && option.id === selected.id">
             <span>
               <i class="fas fa-check-circle text-2xl text-blue-600"></i>
             </span>
@@ -24,25 +27,17 @@
               <i class="far fa-circle text-2xl text-blue-400"></i>
             </span>
           </template>
-          <span class="ml-4">{{ option.text }}</span>
+          <span v-if="option" class="ml-4">
+            {{ $i18n.locale === 'en' ? option.content_en : option.content_cz }}
+          </span>
         </label>
       </li>
     </ol>
     <div class="flex justify-center sm:justify-end mt-8">
       <button
-        class="text-white font-bold py-2 px-4 mr-4 rounded focus:outline-none"
-        :class="[index === 0 ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700']"
-        :disabled="index === 0"
-        @click="previous()"
-      >
-        <i class="fas fa-chevron-left mr-2"></i> Previous
-      </button>
-      <button
         class="text-white font-bold py-2 px-4 rounded focus:outline-none"
-        :class="[
-          selected === -1 ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
-        ]"
-        :disabled="selected === -1"
+        :class="[!selected ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700']"
+        :disabled="!selected"
         @click="next()"
       >
         Next <i class="fas fa-chevron-right ml-2"></i>
@@ -54,26 +49,19 @@
 <script>
 export default {
   props: {
-    question: Object,
-    answer: Number,
-    index: Number
+    state: Object
   },
   data() {
     return {
-      selected: -1
+      selected: null
     };
-  },
-  created() {
-    if (this.answer >= 0 && this.answer < this.question.options.length) {
-      this.selected = this.answer;
-    }
   },
   methods: {
     next() {
-      this.$emit('next', { question: this.question, answer: this.selected });
-    },
-    previous() {
-      this.$emit('previous');
+      if (this.selected) {
+        this.$emit('next', { state: this.state, answer: this.selected });
+        this.selected = null;
+      }
     }
   }
 };

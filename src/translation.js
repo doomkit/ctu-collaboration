@@ -1,5 +1,5 @@
 const sessionLocale = sessionStorage.getItem('locale');
-export const locale = sessionLocale ? sessionLocale : 'en';
+export const locale = sessionLocale ? sessionLocale : 'en'; // or 'cz'
 export const messages = {
   en: {
     navbar: {
@@ -37,6 +37,9 @@ export const messages = {
           'Integer id posuere erat, at volutpat ante. Donec non lectus in nibh egestas facilisis porta et sapien.',
         more: 'Learn more'
       }
+    },
+    test: {
+      question: 'Question №'
     }
   },
   cz: {
@@ -84,6 +87,9 @@ export const messages = {
           'Integer id posuere erat, at volutpat ante. Donec non lectus in nibh egestas facilisis porta et sapien.',
         more: 'Learn more'
       }
+    },
+    test: {
+      question: 'Otázka №'
     }
   }
 };
