@@ -6,10 +6,12 @@ require('@fortawesome/fontawesome-free/js/all.js');
 require('chartjs-chart-radial-gauge');
 
 import * as translation from './translation';
+
 import About from './components/pages/About.vue';
 import Home from './components/pages/Home.vue';
 import Statistics from './components/pages/Statistics.vue';
 import Test from './components/pages/Test.vue';
+import Results from './components/pages/Results.vue';
 
 Vue.use(VueRouter);
 Vue.use(VueI18n);
@@ -23,7 +25,8 @@ const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
   { path: '/statistics', component: Statistics },
-  { path: '/test', component: Test }
+  { path: '/test', component: Test },
+  { path: '/results/:id', component: Results }
 ];
 
 const router = new VueRouter({

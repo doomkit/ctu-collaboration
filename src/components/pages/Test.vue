@@ -23,7 +23,7 @@
           @afterEnter="afterEnter"
         >
           <Start v-if="!state" @start="startTest()" />
-          <div v-if="state">
+          <div v-else-if="state && !state.finished">
             <Question
               v-if="state"
               :state="state"
@@ -31,6 +31,7 @@
               @previous="onPrevoius($event)"
             />
           </div>
+          <ShowResults v-else :id="1" />
         </transition>
       </div>
       <button
@@ -52,11 +53,13 @@ import { env } from '../../environment/env';
 
 import Start from './Questionare/Start';
 import Question from './Questionare/Question';
+import ShowResults from './Questionare/ShowResults';
 
 export default {
   components: {
     Start,
-    Question
+    Question,
+    ShowResults
   },
   data() {
     return {
@@ -89,11 +92,10 @@ export default {
     loadQuestion() {
       axios.post(`${env.base_url}/test`, this.state).then(response => {
         this.state = response.data;
-        this.updateState(this.state);
         if (this.state.end_time) {
-          console.log('END');
-          console.log(this.state);
+          this.state.finished = true;
         }
+        this.updateState(this.state);
       });
     },
     updateState(state) {

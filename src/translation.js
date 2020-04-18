@@ -39,8 +39,12 @@ export const messages = {
       }
     },
     test: {
-      question: 'Question №'
-    }
+      question: 'Question №',
+      thanks: 'Thank you for your time!',
+      link_text: 'You can find your results',
+      here: 'here'
+    },
+    results: {}
   },
   cz: {
     navbar: {
@@ -89,8 +93,12 @@ export const messages = {
       }
     },
     test: {
-      question: 'Otázka №'
-    }
+      question: 'Otázka №',
+      thanks: 'Děkuji vám za Váš čas!',
+      link_text: 'Své výsledky můžete najít',
+      here: 'zde'
+    },
+    results: {}
   }
 };
 export const options = {
