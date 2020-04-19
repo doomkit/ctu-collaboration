@@ -44,7 +44,19 @@ export const messages = {
       link_text: 'You can find your results',
       here: 'here'
     },
-    results: {}
+    results: {},
+    about: {
+      title: 'About project',
+      text_1: "This application represents a part of the Bachelor's thesis",
+      text_2:
+        'The purpose of this application is to analyze how well the company is ready for cooperation and find the most suitable type of cooperation with the faculty.',
+      work: 'Cooperation between universities and industry',
+      author: 'Author',
+      contacts: 'Contact information',
+      source: 'Source code',
+      cooperation: 'Cooperation with companies',
+      public: 'Public relations office'
+    }
   },
   cz: {
     navbar: {
@@ -98,7 +110,19 @@ export const messages = {
       link_text: 'Své výsledky můžete najít',
       here: 'zde'
     },
-    results: {}
+    results: {},
+    about: {
+      title: 'O projektu',
+      text_1: 'Tato aplikace je součástí bakalářské práce',
+      text_2:
+        'Aplikace umožní zájemcům o spolupráci formou testu analyzovat připravenost firmy na spolupráci a identifikovat vhodný typ spolupráce.',
+      work: 'Spolupráce vysokých škol s průmyslem',
+      author: 'Autor',
+      contacts: 'Kontaktní informace',
+      source: 'Zdrojový kód',
+      cooperation: 'Nabídka spolupráce pro firmy',
+      public: 'Oddělení vnějších vztahů - PR'
+    }
   }
 };
 export const options = {

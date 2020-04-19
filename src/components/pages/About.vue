@@ -1,14 +1,24 @@
 <template>
   <main>
-    <h1>This is About page!</h1>
+    <Project />
+    <Contacts />
   </main>
 </template>
 
-<script></script>
+<script>
+import Contacts from './About/Contacts';
+import Project from './About/Project';
+
+export default {
+  components: {
+    Contacts,
+    Project
+  }
+};
+</script>
 
 <style scoped lang="scss">
 main {
-  background-color: #ffdac1;
   width: 100%;
   h1 {
     line-height: 300px;
