@@ -1,5 +1,5 @@
 <template>
-  <RadarChart :data="data" :options="options" :chart_id="'' + random()" />
+  <RadarChart :data="data" :options="options" />
 </template>
 
 <script>
@@ -36,11 +36,6 @@ export default {
         }
       }
     };
-  },
-  methods: {
-    random() {
-      return Math.round(Math.random() * 1000);
-    }
   }
 };
 </script>

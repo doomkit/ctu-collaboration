@@ -1,6 +1,6 @@
 <template>
-  <div id="canvas-holder" style="width:100%">
-    <canvas :id="'chart-_' + chart_id"></canvas>
+  <div class="canvas-holder" style="width:100%">
+    <canvas :id="_uid"></canvas>
   </div>
 </template>
 
@@ -10,11 +10,10 @@ import Chart from 'chart.js';
 export default {
   props: {
     data: Object,
-    options: Object,
-    chart_id: String
+    options: Object
   },
   mounted() {
-    const ctx = document.getElementById('chart-_' + this.chart_id).getContext('2d');
+    const ctx = document.getElementById(this._uid).getContext('2d');
     const value = this.randomScalingFactor();
     // var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
     // gradientStroke.addColorStop(0, '#80b6f4');
@@ -57,3 +56,10 @@ export default {
   }
 };
 </script>
+
+<style lang="css" scoped>
+.canvas-holder {
+  max-width: 400px;
+  margin: 0 auto;
+}
+</style>

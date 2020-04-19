@@ -36,24 +36,13 @@
         </div>
       </div>
       <div class="test container flex flex-col lg:flex-row mx-auto">
-        <div
-          class="flex flex-row justify-around flex-wrap rounded shadow-xl p-8 bg-white mb-8 lg:mr-8 lg:mb-0 lg:w-2/3"
-        >
-          <div class="flex flex-col w-full sm:w-5/12 sm:mr-2 mb-8 sm:mb-0">
-            <SuccessChart />
-            <h2 class="text-center font-semibold text-lg pt-4">Average collaboration success</h2>
-          </div>
-          <div class="flex flex-col w-full sm:w-5/12 sm:mr-2">
-            <SuccessChart />
-            <h2 class="text-center font-semibold text-lg pt-4">Average collaboration success</h2>
-          </div>
+        <div class="flex flex-col rounded shadow-xl p-8 bg-white mb-8 lg:mr-8 lg:mb-0 lg:w-2/3">
+          <h2 class="text-lg">{{ $t('statistics.types') }}</h2>
+          <CollaborationTypes />
         </div>
-        <div class="rounded shadow-xl p-8 bg-white lg:w-1/3">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, inventore! Totam
-            tempore quis fuga odit! Cum natus animi quas tempore iure, cumque adipisci voluptatum.
-            Aspernatur delectus dolorum atque cumque eaque.
-          </p>
+        <div class="flex flex-col justify-center rounded shadow-xl p-8 bg-white lg:w-1/3">
+          <SuccessChart />
+          <h2 class="text-center text-lg pt-4">{{ $t('statistics.score') }}</h2>
         </div>
       </div>
     </div>
@@ -67,11 +56,13 @@ import { env } from '../../environment/env';
 
 import AverageRadar from './Statistics/AverageRadar';
 import SuccessChart from './Statistics/SuccessChart';
+import CollaborationTypes from './Statistics/CollaborationTypes';
 
 export default {
   components: {
     AverageRadar,
-    SuccessChart
+    SuccessChart,
+    CollaborationTypes
   },
   data() {
     return {

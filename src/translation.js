@@ -56,6 +56,10 @@ export const messages = {
       source: 'Source code',
       cooperation: 'Cooperation with companies',
       public: 'Public relations office'
+    },
+    statistics: {
+      types: 'The most common types of cooperation',
+      score: 'Average readiness for cooperation'
     }
   },
   cz: {
@@ -122,6 +126,10 @@ export const messages = {
       source: 'Zdrojový kód',
       cooperation: 'Nabídka spolupráce pro firmy',
       public: 'Oddělení vnějších vztahů - PR'
+    },
+    statistics: {
+      types: 'Nejčastější typy spolupráce',
+      score: 'Průměrná připravenost na spolupráci'
     }
   }
 };
