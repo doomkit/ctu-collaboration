@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="absolute top-0 left-0 w-full z-10 flex items-center bg-white shadow-md">
+    <header class="fixed top-0 left-0 w-full z-10 flex items-center bg-white shadow-md">
       <nav class="container p-2 mx-auto flex items-center justify-between flex-wrap lg:px-16">
         <div class="mr-6">
           <img
