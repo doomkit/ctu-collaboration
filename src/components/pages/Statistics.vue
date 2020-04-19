@@ -9,28 +9,30 @@
         expedita minus perspiciatis id eos recusandae!
       </p>
       <div class="test container rounded shadow-xl p-8 bg-white mx-auto mb-8">
-        <h2 class="text-2xl">Average collaboration profile</h2>
+        <h2 class="text-2xl">{{ $t('statistics.profile') }}</h2>
         <div class="flex flex-row justify-around flex-wrap">
           <div class="w-full sm:w-5/12 sm:mr-2 mb-8 sm:mb-0">
-            <AverageRadar v-on:params="onParams" />
+            <AverageRadar v-on:params="onParams" :locale="$i18n.locale" />
           </div>
           <div class="w-full sm:w-5/12 sm:ml-2 flex flex-col justify-between">
             <div class="">
-              <h3 class="my-2">Average test duration<span class="text-red-600">*</span>:</h3>
+              <h3 class="my-2">
+                {{ $t('statistics.avg_duration') }}<span class="text-red-600">*</span>:
+              </h3>
               <div class="bg-gray-200 text-gray-700 rounded py-2 px-4">
                 <span>{{ avg_duration }}</span>
               </div>
-              <h3 class="my-2">Tests completed:</h3>
+              <h3 class="my-2">{{ $t('statistics.completed') }}</h3>
               <div class="bg-gray-200 text-gray-700 rounded py-2 px-4">
                 <span>{{ total }}</span>
               </div>
-              <h3 class="my-2">Last test completed:</h3>
+              <h3 class="my-2">{{ $t('statistics.last') }}</h3>
               <div class="bg-gray-200 text-gray-700 rounded py-2 px-4">
                 <span>{{ last_completion }}</span>
               </div>
             </div>
             <div class="text-gray-500 text-sm">
-              <p>* Durations longer than 60min are ignored</p>
+              <p>* {{ $t('statistics.duration') }}</p>
             </div>
           </div>
         </div>
@@ -38,7 +40,7 @@
       <div class="test container flex flex-col lg:flex-row mx-auto">
         <div class="flex flex-col rounded shadow-xl p-8 bg-white mb-8 lg:mr-8 lg:mb-0 lg:w-2/3">
           <h2 class="text-lg">{{ $t('statistics.types') }}</h2>
-          <CollaborationTypes />
+          <CollaborationTypes :locale="$i18n.locale" />
         </div>
         <div class="flex flex-col justify-center rounded shadow-xl p-8 bg-white lg:w-1/3">
           <SuccessChart :readiness="readiness" />

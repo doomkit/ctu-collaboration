@@ -13,7 +13,6 @@ export default {
   },
   watch: {
     value: function() {
-      console.log(this.value);
       this.drawChart(this.value);
     }
   },

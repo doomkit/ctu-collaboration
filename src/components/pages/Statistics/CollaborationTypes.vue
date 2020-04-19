@@ -13,6 +13,14 @@ export default {
   components: {
     BarChart
   },
+  props: {
+    locale: String
+  },
+  watch: {
+    locale: function() {
+      this.data = this.getData();
+    }
+  },
   data() {
     return {
       data: null,
@@ -65,7 +73,8 @@ export default {
             }
           }
         }
-      }
+      },
+      values: []
     };
   },
   created() {
@@ -83,21 +92,32 @@ export default {
       for (let i = 0; i < types.length; i++) {
         values = [...values, response.data[types[i]] ? response.data[types[i]] : 0];
       }
-      this.data = this.getData(values);
+      this.values = values;
+      this.data = this.getData();
     });
   },
   methods: {
-    getData(values) {
+    getData() {
+      let labels_en = [
+        'education',
+        'management',
+        ['research', 'projects'],
+        ['commercial', 'projects'],
+        ['employee', 'mobility'],
+        ['student', 'mobility'],
+        ['short-term', 'cooperation']
+      ];
+      let labels_cz = [
+        'výuka',
+        'management',
+        ['výzkumné', 'projekty'],
+        ['komerční', 'projekty'],
+        ['mobilita', 'zaměstnanců'],
+        ['mobilita', 'studentů'],
+        ['krátkodobá', 'spolupráce']
+      ];
       return {
-        labels: [
-          'education',
-          'management',
-          ['research', 'projects'],
-          ['commercial', 'projects'],
-          ['employee', 'mobility'],
-          ['student', 'mobility'],
-          ['short-term', 'cooperation']
-        ],
+        labels: this.locale === 'en' ? labels_en : labels_cz,
         datasets: [
           {
             label: 'Dataset 1',
@@ -105,7 +125,7 @@ export default {
             categoryPercentage: 1,
             barPercentage: 0.7,
             borderWidth: 0,
-            data: values
+            data: this.values
           }
         ]
       };

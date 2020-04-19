@@ -11,6 +11,19 @@ export default {
   components: {
     RadarChart
   },
+  props: {
+    locale: String
+  },
+  watch: {
+    locale: function() {
+      let labels = this.translateLabels();
+      let datasets = this.data.datasets;
+      this.data = {
+        labels,
+        datasets
+      };
+    }
+  },
   data() {
     return {
       data: undefined,
@@ -36,8 +49,15 @@ export default {
             stepSize: 2
           },
           gridLines: { circular: true }
+        },
+        layout: {
+          padding: {
+            left: 10,
+            right: 10
+          }
         }
-      }
+      },
+      labels: []
     };
   },
   created() {
@@ -52,8 +72,9 @@ export default {
         labels = [...labels, key];
         values = [...values, response.data[key]];
       }
+      this.labels = labels;
       this.data = {
-        labels,
+        labels: this.translateLabels(labels),
         datasets: [
           {
             backgroundColor: 'rgba(131, 187, 214, 0.3)',
@@ -65,6 +86,18 @@ export default {
         ]
       };
     });
+  },
+  methods: {
+    translateLabels() {
+      let params = [];
+      if (this.locale === 'cz') {
+        this.labels.forEach(elem => {
+          params = [...params, this.$t(`statistics.params.${elem}`)];
+        });
+        return params;
+      }
+      return this.labels;
+    }
   }
 };
 </script>

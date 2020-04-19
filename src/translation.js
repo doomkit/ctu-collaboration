@@ -58,8 +58,22 @@ export const messages = {
       public: 'Public relations office'
     },
     statistics: {
+      profile: 'Average collaboration profile',
+      avg_duration: 'Average test duration',
+      completed: 'Tests completed',
+      last: 'Last test completed',
+      duration: 'Durations longer than 60min are ignored',
       types: 'The most common types of cooperation',
-      score: 'Average readiness for cooperation'
+      score: 'Average readiness for cooperation',
+      params: {
+        communication: 'communication',
+        experience: 'experience',
+        expectations: 'expectations',
+        knowledge: 'knowledge',
+        people: 'people',
+        resources: 'resources',
+        specificity: 'specificity'
+      }
     }
   },
   cz: {
@@ -85,8 +99,8 @@ export const messages = {
         text:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo, magnam consequuntur earum dicta molestiae animi nemo voluptatum doloribus accusamus libero maxime laborum mollitia soluta laudantium dolorem a expedita ipsam?',
         button: 'Test',
-        alternative_text: 'Or explore the ',
-        alternative_link: 'statistics of previous results '
+        alternative_text: 'Nebo prozkoumejte ',
+        alternative_link: 'statistiky předchozích výsledků'
       },
       footer: {
         cvut: {
@@ -128,8 +142,22 @@ export const messages = {
       public: 'Oddělení vnějších vztahů - PR'
     },
     statistics: {
+      profile: 'Průměrný profil spolupráce',
+      avg_duration: 'Průměrná doba trvání testu',
+      completed: 'Dokončené testy',
+      last: 'Poslední test dokončen',
+      duration: 'Trvání delší než 60 minut se ignoruje',
       types: 'Nejčastější typy spolupráce',
-      score: 'Průměrná připravenost na spolupráci'
+      score: 'Průměrná připravenost na spolupráci',
+      params: {
+        communication: 'komunikace',
+        experience: 'zkušenost',
+        expectations: 'očekávání',
+        knowledge: 'znalosti',
+        people: 'lidé',
+        resources: 'zdroje',
+        specificity: 'specifikum'
+      }
     }
   }
 };
