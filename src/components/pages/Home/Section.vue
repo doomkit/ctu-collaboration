@@ -5,8 +5,11 @@
         {{ $t('home.section.title') }}
       </h2>
       <div class="flex flex-row">
-        <div class="hidden w-1/2 pr-4 lg:pr-16 md:flex flex-col justify-center">
+        <div class="hidden relative w-1/2 pr-4 lg:pr-16 md:flex flex-col justify-center">
           <img src="../../../assets/vector2.png" alt="" />
+          <span class="absolute block -mb-6 left-0 bottom-0 text-xs text-gray-500 select-none">
+            Designed by Freepik
+          </span>
         </div>
         <div class="md:w-1/2">
           <div class="mb-6">
