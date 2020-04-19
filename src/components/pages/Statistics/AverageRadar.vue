@@ -45,6 +45,7 @@ export default {
       if (!response || !response.data) {
         return;
       }
+      this.$emit('params', response.data);
       let labels = [];
       let values = [];
       for (let key in response.data) {

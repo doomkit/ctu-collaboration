@@ -12,7 +12,7 @@
         <h2 class="text-2xl">Average collaboration profile</h2>
         <div class="flex flex-row justify-around flex-wrap">
           <div class="w-full sm:w-5/12 sm:mr-2 mb-8 sm:mb-0">
-            <AverageRadar />
+            <AverageRadar v-on:params="onParams" />
           </div>
           <div class="w-full sm:w-5/12 sm:ml-2 flex flex-col justify-between">
             <div class="">
@@ -41,7 +41,7 @@
           <CollaborationTypes />
         </div>
         <div class="flex flex-col justify-center rounded shadow-xl p-8 bg-white lg:w-1/3">
-          <SuccessChart />
+          <SuccessChart :readiness="readiness" />
           <h2 class="text-center text-lg pt-4">{{ $t('statistics.score') }}</h2>
         </div>
       </div>
@@ -68,7 +68,8 @@ export default {
     return {
       avg_duration: null,
       total: null,
-      last_completion: null
+      last_completion: null,
+      readiness: 0
     };
   },
   async created() {
@@ -79,6 +80,15 @@ export default {
       this.total = response.data.total;
       this.last_completion = moment(response.data.last_completion).format('MMM DD YYYY, hh:mm');
     });
+  },
+  methods: {
+    onParams(values) {
+      let res = 0;
+      for (let key in values) {
+        res = res + values[key];
+      }
+      this.readiness = Math.round((res / 7) * 10);
+    }
   }
 };
 </script>

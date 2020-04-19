@@ -9,49 +9,47 @@ import Chart from 'chart.js';
 
 export default {
   props: {
-    data: Object,
-    options: Object
+    value: Number
   },
-  mounted() {
-    const ctx = document.getElementById(this._uid).getContext('2d');
-    const value = this.randomScalingFactor();
-    // var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-    // gradientStroke.addColorStop(0, '#80b6f4');
-    // gradientStroke.addColorStop(1, '#f49080');
-    const config = {
-      type: 'radialGauge',
-      data: {
-        labels: ['Metrics'],
-        datasets: [
-          {
-            data: [value],
-            backgroundColor: ['#1D84B5'],
-            borderWidth: 0,
-            label: 'Score'
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        aspectRatio: 1.2,
-        legend: {},
-        title: {
-          display: false
-        },
-        centerPercentage: 75,
-        centerArea: {
-          fontSize: '38px',
-          fontColor: '#2c3e50',
-          fontFamily: 'Avenir, Helvetica, Arial, sans-serif',
-          text: `${value} %`
-        }
-      }
-    };
-    window.myRadialGauge = new Chart(ctx, config);
+  watch: {
+    value: function() {
+      console.log(this.value);
+      this.drawChart(this.value);
+    }
   },
   methods: {
-    randomScalingFactor() {
-      return Math.round(Math.random() * 100);
+    drawChart(value) {
+      const ctx = document.getElementById(this._uid).getContext('2d');
+      const config = {
+        type: 'radialGauge',
+        data: {
+          labels: ['Metrics'],
+          datasets: [
+            {
+              data: [value],
+              backgroundColor: ['#1D84B5'],
+              borderWidth: 0,
+              label: 'Score'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          aspectRatio: 1.2,
+          legend: {},
+          title: {
+            display: false
+          },
+          centerPercentage: 75,
+          centerArea: {
+            fontSize: '38px',
+            fontColor: '#2c3e50',
+            fontFamily: 'Avenir, Helvetica, Arial, sans-serif',
+            text: `${value} %`
+          }
+        }
+      };
+      window.myRadialGauge = new Chart(ctx, config);
     }
   }
 };
