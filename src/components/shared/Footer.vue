@@ -29,20 +29,12 @@
         <p class="font-bold text-blue-200 mb-2">{{ $t('footer.links') }}</p>
         <div class="text-3xl">
           <a
-            href="https://github.com/doomkit/ctu-collaboration"
+            href="https://github.com/doomkit"
             target="_blank"
             rel="nofollow noopener"
             class="hover:text-blue-300"
           >
             <i class="fab fa-github mr-2"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/nikita-shkarupa/"
-            target="_blank"
-            rel="nofollow noopener"
-            class="hover:text-blue-300"
-          >
-            <i class="fab fa-linkedin mx-2"></i>
           </a>
           <a
             href="https://www.fel.cvut.cz/cz/"
