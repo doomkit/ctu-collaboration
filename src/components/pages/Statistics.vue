@@ -2,11 +2,12 @@
   <div class="bg-gray-100">
     <div class="container m-auto px-4 py-20 lg:px-16">
       <div class="flex justify-between">
-        <h1 class="text-4xl font-semibold text-left inline-block pt-8 pb-4">Statistics</h1>
+        <h1 class="text-4xl font-semibold text-left inline-block pt-8 pb-4">
+          {{ $t('statistics.title') }}
+        </h1>
       </div>
       <p class="text-left lg:text-lg mb-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere molestias, officia quis
-        expedita minus perspiciatis id eos recusandae!
+        {{ $t('statistics.subtitle') }}
       </p>
       <div class="test container rounded shadow-xl p-8 bg-white mx-auto mb-8">
         <h2 class="text-2xl">{{ $t('statistics.profile') }}</h2>
