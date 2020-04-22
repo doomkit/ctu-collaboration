@@ -69,7 +69,7 @@ export const messages = {
       public: 'Public relations office'
     },
     statistics: {
-      title: 'Statistika',
+      title: 'Statistics',
       subtitle: 'Here you can explore data from completed tests',
       profile: 'Average collaboration profile',
       avg_duration: 'Average test duration',
