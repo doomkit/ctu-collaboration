@@ -9,8 +9,11 @@
           >
             {{ $t('home.welcome.title') }}
           </h1>
-          <p class="text-center sm:text-left lg:text-lg pb-8 sm:pr-8">
+          <p class="text-center sm:text-left lg:text-lg pb-2 sm:pr-8">
             {{ $t('home.welcome.text') }}
+          </p>
+          <p class="text-center sm:text-left lg:text-lg pb-8 sm:pr-8">
+            {{ $t('home.welcome.text_2') }}
           </p>
         </div>
         <div class="hidden relative w-1/2 -mb-24 lg:-mb-32 sm:flex flex-col justify-end">

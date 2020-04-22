@@ -25,19 +25,21 @@ export const messages = {
       welcome: {
         title: 'University-Buiseness Collaboration Guide',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo, magnam consequuntur earum dicta molestiae animi nemo voluptatum doloribus accusamus libero maxime laborum mollitia soluta laudantium dolorem a expedita ipsam?',
+          'Are you considering about collaboration with a technical university? Are you attracted by benefits from a specific cooperation? Have you presented scientific projects and researches?',
+        text_2:
+          'If one of your answers is yes to one of above questions, you are in the right place. This app is here to find out whether you are prepared for collaboration or find weak spots.',
         button: 'Test',
         alternative_text: 'Or explore the ',
         alternative_link: 'statistics of previous results '
       },
       section: {
-        title: 'What is University-Buisienss Collaboration?',
+        title: "What does term 'collaboration' actually mean?",
         p1:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis nibh eget semper aliquet. Sed at malesuada neque. Morbi volutpat turpis sed convallis mollis. Mauris tincidunt tincidunt ornare. Maecenas non purus nisi. Sed gravida nibh eu odio lobortis malesuada.',
+          'Collaboration means working together to ensure that all participants are satisfied. All participants are likely to be satisfied when they are financially secured, have satisfied employees and management, as well as customers.',
         p2:
-          'Nunc suscipit diam ut ante fermentum vulputate. Fusce lectus justo, aliquet a porttitor eu, lacinia sed neque. Mauris feugiat vestibulum lorem ut volutpat. Donec eget sem feugiat, luctus felis et, lacinia augue.',
+          'How to find a suitable cooperation between your company and the Faculty of Electrical Engineering of the CTU?',
         p3:
-          'Integer id posuere erat, at volutpat ante. Donec non lectus in nibh egestas facilisis porta et sapien.',
+          'Successful cooperation is built on several pillars, which must be solid and stable. If these pillars are not strong enough, cooperation will collapse after some time. Two main components of prosperous cooperation are People and Communication.',
         more: 'Learn more'
       }
     },
@@ -109,7 +111,9 @@ export const messages = {
       welcome: {
         title: 'Průvodce Spoluprací Univerzity s Průmyslem',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo, magnam consequuntur earum dicta molestiae animi nemo voluptatum doloribus accusamus libero maxime laborum mollitia soluta laudantium dolorem a expedita ipsam?',
+          'Uvažuje Vaše firma o spolupráci s technickou univerzitou? Lákají Vás výhody, které z takové spolupráce plynou? Už si představujete společné projekty a výzkumy?',
+        text_2:
+          'Pokud jste alespoň na jednu z otázek uvedených výše odpověděli ano, jste tu správně. Tato stránka obsahuje průvodce spoluprací a nabízí udělat si test, zda jste na takovou spolupráci připraveni, případně upozorní na slabá místa.',
         button: 'Test',
         alternative_text: 'Nebo prozkoumejte ',
         alternative_link: 'statistiky předchozích výsledků '
@@ -124,14 +128,14 @@ export const messages = {
         links: 'Links'
       },
       section: {
-        title: 'What is University-Buisienss Collaboration?',
+        title: 'Co je to vlastně spolupráce?',
         p1:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis nibh eget semper aliquet. Sed at malesuada neque. Morbi volutpat turpis sed convallis mollis. Mauris tincidunt tincidunt ornare. Maecenas non purus nisi. Sed gravida nibh eu odio lobortis malesuada.',
+          'Spolupráce znamená společnou práci více stran takovou, aby všechny strany byly spokojeny. Obě strany budou spokojené pravděpodobně, když budou finančně zajištěné, budou mít spokojené zaměstnance i vedení a zároveň i zákazníky.',
         p2:
-          'Nunc suscipit diam ut ante fermentum vulputate. Fusce lectus justo, aliquet a porttitor eu, lacinia sed neque. Mauris feugiat vestibulum lorem ut volutpat. Donec eget sem feugiat, luctus felis et, lacinia augue.',
+          'Jak nalézt vhodnou spolupráci mezi Vaší společností a Fakultou elektrotechnickou ČVUT?',
         p3:
-          'Integer id posuere erat, at volutpat ante. Donec non lectus in nibh egestas facilisis porta et sapien.',
-        more: 'Learn more'
+          'Úspěšná spolupráce je postavena na několika pilířích, které musí být postaveny a musí být stabilní. Pokud nebudou tyto pilíře dostatečně pevné, spolupráce se po nějakém čase (ať už kratším či delším) zhroutí. Základními vlastnostmi prosperující spolupráce jsou Lidé a Komunikace.',
+        more: 'Více o projektu '
       }
     },
     test: {

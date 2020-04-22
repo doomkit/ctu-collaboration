@@ -16,7 +16,7 @@
             <p class="mb-4 lg:text-lg">
               {{ $t('home.section.p1') }}
             </p>
-            <p class="mb-4 lg:text-lg">
+            <p class="mb-4 lg:text-lg font-bold">
               {{ $t('home.section.p2') }}
             </p>
             <p class="mb-4 lg:text-lg">
