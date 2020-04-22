@@ -2,14 +2,18 @@
   <div class="bg-gray-100">
     <div class="container m-auto px-4 py-20 lg:px-16">
       <div class="flex justify-between">
-        <h1 class="text-4xl font-semibold text-left inline-block pt-8 pb-4">Collaboration Test</h1>
+        <h1 class="text-4xl font-semibold text-left inline-block pt-8 pb-4">
+          {{ $t('test.title') }}
+        </h1>
         <div class="hidden sm:flex flex-col justify-center font-medium text-blue-700">
           <span>~10 min <i class="far fa-clock"></i></span>
         </div>
       </div>
+      <p class="text-left lg:text-lg mb-2">
+        {{ $t('test.text') }}
+      </p>
       <p class="text-left lg:text-lg mb-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere molestias, officia quis
-        expedita minus perspiciatis id eos recusandae!
+        {{ $t('test.text_2') }} <span class="font-bold">{{ $t('test.anonymusly') }}.</span>
       </p>
 
       <div

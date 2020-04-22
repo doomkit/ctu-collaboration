@@ -44,6 +44,12 @@ export const messages = {
       }
     },
     test: {
+      title: 'Collaboration Test',
+      text:
+        'Choose the answers that correspond to reality as much as possible. No answer is wrong and it can lead to different type of cooperation. You can take a look at all of your answers and some comments to them after completing test.',
+      text_2: 'All answers will be saved ',
+      anonymusly: 'anonymusly',
+      start: 'Start test',
       question: 'Question №',
       thanks: 'Thank you for your time!',
       link_text: 'You can find your results',
@@ -139,6 +145,12 @@ export const messages = {
       }
     },
     test: {
+      title: 'Test spolupráce',
+      text:
+        'V testu volte odpovědi tak, aby co nejvíce odpovídaly realitě. Žádná odpověď není špatná a každá může vyústit v jiný typ spolupráce. Všechny odpovědi a vysvětlení si budete moci prohlédnout ve vyhodnocení.',
+      text_2: 'Všechny odpovědi budou uloženy ',
+      anonymusly: 'anonymně',
+      start: 'Zahájit test',
       question: 'Otázka №',
       thanks: 'Děkuji vám za Váš čas!',
       link_text: 'Své výsledky můžete najít',
