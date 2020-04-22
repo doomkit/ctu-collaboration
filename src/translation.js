@@ -15,7 +15,7 @@ export const messages = {
         faculty: 'Faculty of Electrical Engineering',
         address: 'Technická 2, 166 27, Praha 6 - Dejvice'
       },
-      contacts: 'Contacts',
+      contacts: 'Contact the author',
       links: 'Links'
     },
     home: {
@@ -90,7 +90,7 @@ export const messages = {
         faculty: 'Fakulta elektrotechnická',
         address: 'Technická 2, 166 27, Praha 6 - Dejvice'
       },
-      contacts: 'Kontakty',
+      contacts: 'Kontaktovat autora',
       links: 'Odkazy'
     },
     home: {
