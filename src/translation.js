@@ -2,6 +2,9 @@ const sessionLocale = sessionStorage.getItem('locale');
 export const locale = sessionLocale ? sessionLocale : 'en'; // or 'cz'
 export const messages = {
   en: {
+    app: {
+      title: 'CTU Collaboration'
+    },
     navbar: {
       home: 'Home',
       test: 'Test',
@@ -59,6 +62,7 @@ export const messages = {
     },
     statistics: {
       title: 'Statistika',
+      subtitle: 'Here you can explore data from completed tests',
       profile: 'Average collaboration profile',
       avg_duration: 'Average test duration',
       completed: 'Tests completed',
@@ -82,6 +86,9 @@ export const messages = {
     }
   },
   cz: {
+    app: {
+      title: 'ČVUT Spoluprace'
+    },
     navbar: {
       home: 'Úvod',
       test: 'Test',
@@ -147,7 +154,8 @@ export const messages = {
       public: 'Oddělení vnějších vztahů - PR'
     },
     statistics: {
-      title: 'Statistics',
+      title: 'Statistika',
+      subtitle: 'Zde si můžete prohlédnout data z dokončených testů',
       profile: 'Průměrný profil spolupráce',
       avg_duration: 'Průměrná doba trvání testu',
       completed: 'Dokončené testy',

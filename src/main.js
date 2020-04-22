@@ -46,6 +46,9 @@ const router = new VueRouter({
 });
 const i18n = new VueI18n(translation.options);
 
+import Title from './components/shared/Title.vue';
+Vue.component('vue-title', Title);
+
 new Vue({
   router,
   render: h => h(App),

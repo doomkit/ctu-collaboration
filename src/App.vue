@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <vue-title :title="$t('app.title')"></vue-title>
     <Header />
     <main class="lg:pt-28 w-full">
       <transition
