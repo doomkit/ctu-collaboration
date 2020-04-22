@@ -58,6 +58,7 @@ export const messages = {
       public: 'Public relations office'
     },
     statistics: {
+      title: 'Statistika',
       profile: 'Average collaboration profile',
       avg_duration: 'Average test duration',
       completed: 'Tests completed',
@@ -74,6 +75,10 @@ export const messages = {
         resources: 'resources',
         specificity: 'specificity'
       }
+    },
+    404: {
+      text: 'Oops, page not found',
+      home: 'Home'
     }
   },
   cz: {
@@ -100,7 +105,7 @@ export const messages = {
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo, magnam consequuntur earum dicta molestiae animi nemo voluptatum doloribus accusamus libero maxime laborum mollitia soluta laudantium dolorem a expedita ipsam?',
         button: 'Test',
         alternative_text: 'Nebo prozkoumejte ',
-        alternative_link: 'statistiky předchozích výsledků'
+        alternative_link: 'statistiky předchozích výsledků '
       },
       footer: {
         cvut: {
@@ -142,6 +147,7 @@ export const messages = {
       public: 'Oddělení vnějších vztahů - PR'
     },
     statistics: {
+      title: 'Statistics',
       profile: 'Průměrný profil spolupráce',
       avg_duration: 'Průměrná doba trvání testu',
       completed: 'Dokončené testy',
@@ -158,6 +164,10 @@ export const messages = {
         resources: 'zdroje',
         specificity: 'specifikum'
       }
+    },
+    404: {
+      text: 'Oops, stránka nenalezena',
+      home: 'Domů'
     }
   }
 };

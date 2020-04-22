@@ -12,6 +12,7 @@ import Home from './components/pages/Home.vue';
 import Statistics from './components/pages/Statistics.vue';
 import Test from './components/pages/Test.vue';
 import Results from './components/pages/Results.vue';
+import NotFound from './components/pages/NotFound.vue';
 
 Vue.use(VueRouter);
 Vue.use(VueI18n);
@@ -26,7 +27,8 @@ const routes = [
   { path: '/about', component: About },
   { path: '/statistics', component: Statistics },
   { path: '/test', component: Test },
-  { path: '/results/:id', component: Results }
+  { path: '/results/:id', component: Results },
+  { path: '*', component: NotFound }
 ];
 
 const router = new VueRouter({
