@@ -14,7 +14,7 @@
         {{ $t('about.cooperation') }}
       </a>
     </h2>
-    <p class="text-base">Ing. Pavel Náplava</p>
+    <p class="text-base">Ing. Pavel Náplava, Ph.D.</p>
     <p class="text-base">
       <a class="underline text-blue-700 hover:text-blue-900" href="mailto:spoluprace@fel.cvut.cz">
         spoluprace@fel.cvut.cz

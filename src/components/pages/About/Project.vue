@@ -13,12 +13,19 @@
       <p class="mb-0">
         <a
           class="underline text-blue-700 hover:text-blue-900"
+          href="mailto:skarunik@fel.cvut.cz?Subject=Bachelor's%20thesis"
+        >
+          skarunik@fel.cvut.cz
+        </a>
+      </p>
+      <p class="mb-0">
+        <a
+          class="underline text-blue-700 hover:text-blue-900"
           href="mailto:n.shkarupa@yahoo.com?Subject=Bachelor's%20thesis"
         >
           n.shkarupa@yahoo.com
         </a>
       </p>
-      <p class="mb-0">2019-2020</p>
       <h2 class="text-2xl font-medium mt-6 mb-2">{{ $t('about.source') }}</h2>
       <p class="mb-0">
         <a
