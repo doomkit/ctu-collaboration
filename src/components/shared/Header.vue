@@ -1,7 +1,7 @@
 <template>
   <div>
-    <header class="fixed top-0 left-0 w-full z-10 flex items-center bg-white shadow-md">
-      <nav class="container p-2 mx-auto flex items-center justify-between flex-wrap lg:px-16">
+    <header class="fixed top-0 left-0 w-full z-10 flex items-center bg-white shadow-md z-20">
+      <nav class="container p-2 mx-auto flex items-center justify-between flex-wrap lg:px-16 ">
         <div class="mr-6">
           <img
             class="h-10 w-auto select-none cursor-pointer"
@@ -68,7 +68,7 @@
     <button
       v-if="show_menu"
       @click="show_menu = false"
-      class="fixed top-0 right-0 bottom-0 left-0 h-full w-full bg-black opacity-50 z-0"
+      class="fixed top-0 right-0 bottom-0 left-0 h-full w-full bg-black opacity-50 z-10"
     ></button>
   </div>
 </template>
