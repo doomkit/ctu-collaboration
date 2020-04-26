@@ -9,6 +9,7 @@ export default {
         document.title = this.title;
       }
     }
-  }
+  },
+  render: () => null
 };
 </script>
