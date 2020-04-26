@@ -16,7 +16,7 @@
             <AverageRadar v-on:params="onParams" :locale="$i18n.locale" />
           </div>
           <div class="w-full sm:w-5/12 sm:ml-2 flex flex-col justify-between">
-            <div class="">
+            <div>
               <h3 class="my-2">
                 {{ $t('statistics.avg_duration') }}<span class="text-red-600">*</span>:
               </h3>

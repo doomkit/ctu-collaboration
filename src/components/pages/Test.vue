@@ -35,7 +35,7 @@
               @previous="onPrevoius($event)"
             />
           </div>
-          <ShowResults v-else :id="1" />
+          <ShowResults v-else :id="state.result_str_id" />
         </transition>
       </div>
       <button

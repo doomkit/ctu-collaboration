@@ -55,7 +55,29 @@ export const messages = {
       link_text: 'You can find your results',
       here: 'here'
     },
-    results: {},
+    results: {
+      title: 'Test Results',
+      subtitle: 'Here you can find your score and analysis of your answers.',
+      copy_link: 'Save this link, if you want to take a look at this result later.',
+      copied: 'Copied!',
+      types: {
+        education: 'Education',
+        management: 'Management',
+        'research projects': 'Research Projects',
+        'commercial projects': 'Commercial Projects',
+        'employee mobility': 'Employee Mobility',
+        'student mobility': 'Student Mobility',
+        'short-term cooperation': 'Short-term Cooperation'
+      },
+      completed: 'Completed at',
+      duration: 'Test duration',
+      type: 'Type',
+      primary: 'Primary profile',
+      secondary: 'Secondary profile',
+      avg_profile: 'average profile',
+      your_primary: 'your primary profile',
+      your_secondary: 'your secondary profile'
+    },
     about: {
       title: 'About project',
       text_1: "This application represents a part of the Bachelor's thesis",
@@ -156,7 +178,29 @@ export const messages = {
       link_text: 'Své výsledky můžete najít',
       here: 'zde'
     },
-    results: {},
+    results: {
+      title: 'Výsledky testů',
+      subtitle: 'Tady najdete výsledky testů a analýzu vašich odpovědí.',
+      copy_link: 'Uložte tento odkaz, pokud se chcete na tuto stránku podívat později.',
+      copied: 'Okopírovano!',
+      types: {
+        education: 'Výuka',
+        management: 'Management',
+        'research projects': 'Výzkumné projekty',
+        'commercial projects': 'Komerční projekty',
+        'employee mobility': 'Mobilita zaměstnanců',
+        'student mobility': 'Mobilita studentů',
+        'short-term cooperation': 'Krátkodobá spolupráce'
+      },
+      completed: 'Dokončeno v',
+      duration: 'Trvání testu',
+      type: 'Typ',
+      primary: 'Primární profil',
+      secondary: 'Sekundární profil',
+      avg_profile: 'průměrný profil',
+      your_primary: 'váš primární profil',
+      your_secondary: 'váš sekundární profil'
+    },
     about: {
       title: 'O projektu',
       text_1: 'Tato aplikace je součástí bakalářské práce',
