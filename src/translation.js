@@ -1,5 +1,5 @@
 const sessionLocale = sessionStorage.getItem('locale');
-export const locale = sessionLocale ? sessionLocale : 'en'; // or 'cz'
+export const locale = sessionLocale ? sessionLocale : 'cz';
 export const messages = {
   en: {
     app: {
