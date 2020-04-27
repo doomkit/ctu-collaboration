@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      link: env.base_url.replace('api/', '') + '/results/' + this.$route.params.id,
+      link: (env.base_url + '/results/' + this.$route.params.id).replace('api/', ''),
       comments: undefined,
       loaded: false
     };
