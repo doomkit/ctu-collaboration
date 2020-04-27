@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-gray-100">
+  <main class="bg-gray-100 my-10">
     <ResultsHeader v-if="loaded" :link="link" />
     <Profiles
       :locale="$i18n.locale"
