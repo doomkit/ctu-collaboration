@@ -2,9 +2,8 @@
 node_modules
 /dist
 
-# local env files
-.env.local
-.env.*.local
+# vscode config
+.vscode/
 
 # Log files
 npm-debug.log*
