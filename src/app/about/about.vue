@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Contacts from './About/Contacts';
-import Project from './About/Project';
+import Contacts from './components/contacts';
+import Project from './components/project';
 
 export default {
   components: {

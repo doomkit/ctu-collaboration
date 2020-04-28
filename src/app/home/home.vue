@@ -1,13 +1,13 @@
 <template>
   <div>
     <Welcome />
-    <Section :alternativeBackground="false" />
+    <Section />
   </div>
 </template>
 
 <script>
-import Welcome from './Home/Welcome';
-import Section from './Home/Section';
+import Welcome from './components/welcome';
+import Section from './components/section';
 
 export default {
   components: {

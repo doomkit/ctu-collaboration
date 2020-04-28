@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import CommentsItem from './CommentsItem';
+import CommentsItem from './comments-item';
 export default {
   components: {
     CommentsItem

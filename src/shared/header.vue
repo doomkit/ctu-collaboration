@@ -5,7 +5,7 @@
         <div class="mr-6">
           <img
             class="h-10 w-auto select-none cursor-pointer"
-            src="../../../src/assets/logo.png"
+            src="../../src/assets/logo.png"
             alt="logo"
           />
         </div>
@@ -80,13 +80,13 @@ export default {
       languages: [
         {
           locale: 'cz',
-          img: require('../../assets/languages/cz.jpeg'),
-          disable_img: require('../../assets/languages/cz_disabled.jpeg')
+          img: require('../assets/languages/cz.jpeg'),
+          disable_img: require('../assets/languages/cz_disabled.jpeg')
         },
         {
           locale: 'en',
-          img: require('../../assets/languages/uk.jpeg'),
-          disable_img: require('../../assets/languages/uk_disabled.jpeg')
+          img: require('../assets/languages/uk.jpeg'),
+          disable_img: require('../assets/languages/uk_disabled.jpeg')
         }
       ],
       links: [
@@ -113,7 +113,7 @@ export default {
 
 <style scoped lang="scss">
 .image-url {
-  background-image: url('../../../src/assets/logo.png');
+  background-image: url('../../src/assets/logo.png');
 }
 .h-188px {
   height: 188px;

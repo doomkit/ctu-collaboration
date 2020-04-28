@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import App from './App.vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 require('@fortawesome/fontawesome-free/js/all.js');
@@ -7,20 +6,18 @@ require('chartjs-chart-radial-gauge');
 
 import * as translation from './translation';
 
-import About from './components/pages/About.vue';
-import Home from './components/pages/Home.vue';
-import Statistics from './components/pages/Statistics.vue';
-import Test from './components/pages/Test.vue';
-import Results from './components/pages/Results.vue';
-import NotFound from './components/pages/NotFound.vue';
+import App from './app/app';
+
+import About from './app/about/about';
+import Home from './app/home/home.vue';
+import Statistics from './app/statistics/statistics.vue';
+import Test from './app/test/test.vue';
+import Results from './app/results/results.vue';
+import NotFound from './app/not-found/not-found';
+import Title from './shared/title';
 
 Vue.use(VueRouter);
 Vue.use(VueI18n);
-
-// TODO: change before going to production
-const environment = {
-  production: false
-};
 
 const routes = [
   { path: '/', component: Home },
@@ -46,7 +43,6 @@ const router = new VueRouter({
 });
 const i18n = new VueI18n(translation.options);
 
-import Title from './components/shared/Title.vue';
 Vue.component('vue-title', Title);
 
 new Vue({
@@ -54,9 +50,8 @@ new Vue({
   render: h => h(App),
   i18n
 }).$mount('#app');
-Vue.config.productionTip = false;
 
-if (environment.production) {
+if (process.env.NODE_ENV === 'production') {
   Vue.config = {
     ...Vue.config,
     silent: true,

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PercentCircle from '../Charts/PercentCircle';
+import PercentCircle from '../../../shared/charts/percent-circle.vue';
 
 export default {
   components: {

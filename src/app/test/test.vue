@@ -35,7 +35,7 @@
               @previous="onPrevoius($event)"
             />
           </div>
-          <ShowResults v-else :id="state.result_str_id" />
+          <ResultsLink v-else :id="state.result_str_id" />
         </transition>
       </div>
       <button
@@ -54,15 +54,15 @@
 import axios from 'axios';
 import moment from 'moment';
 
-import Start from './Questionare/Start';
-import Question from './Questionare/Question';
-import ShowResults from './Questionare/ShowResults';
+import Start from './components/start';
+import Question from './components/question';
+import ResultsLink from './components/results-link';
 
 export default {
   components: {
     Start,
     Question,
-    ShowResults
+    ResultsLink
   },
   data() {
     return {

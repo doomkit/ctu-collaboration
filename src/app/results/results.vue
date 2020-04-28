@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-gray-100 my-10">
+  <main class="bg-gray-100 my-10 min-h-screen">
     <ResultsHeader v-if="loaded" :link="link" />
     <Profiles
       :locale="$i18n.locale"
@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import ResultsHeader from './Results/ResultsHeader';
-import Profiles from './Results/Profiles';
-import Comments from './Results/Comments';
+import ResultsHeader from './components/results-header';
+import Profiles from './components/profiles';
+import Comments from './components/comments';
 
 export default {
   components: {
@@ -39,13 +39,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-main {
-  width: 100%;
-  min-height: calc(100vh - 180px);
-  h1 {
-    line-height: 300px;
-  }
-}
-</style>

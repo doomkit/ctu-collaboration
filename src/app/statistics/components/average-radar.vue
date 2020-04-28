@@ -4,7 +4,7 @@
 
 <script>
 import axios from 'axios';
-import RadarChart from '../Charts/RadarChart';
+import RadarChart from '../../../shared/charts/radar-chart';
 
 export default {
   components: {

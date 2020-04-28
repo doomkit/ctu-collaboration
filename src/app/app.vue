@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import Header from './components/shared/Header.vue';
-import Footer from './components/shared/Footer.vue';
+import Header from '../shared/header.vue';
+import Footer from '../shared/footer.vue';
 
 export default {
   name: 'app',
@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../style';
+@import '../../style';
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

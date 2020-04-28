@@ -56,9 +56,9 @@
 import moment from 'moment';
 import axios from 'axios';
 
-import AverageRadar from './Statistics/AverageRadar';
-import SuccessChart from './Statistics/SuccessChart';
-import CollaborationTypes from './Statistics/CollaborationTypes';
+import AverageRadar from './components/average-radar';
+import SuccessChart from './components/success-chart';
+import CollaborationTypes from './components/collaboration-types';
 
 export default {
   components: {
