@@ -55,7 +55,6 @@
 <script>
 import moment from 'moment';
 import axios from 'axios';
-import { env } from '../../environment/env';
 
 import AverageRadar from './Statistics/AverageRadar';
 import SuccessChart from './Statistics/SuccessChart';
@@ -76,7 +75,7 @@ export default {
     };
   },
   async created() {
-    axios.get(`${env.base_url}/statistics/avg-time-spent`).then(response => {
+    axios.get(`${process.env.VUE_APP_API}/statistics/avg-time-spent`).then(response => {
       let min = Math.floor(response.data.avg_duration / 60);
       let sec = response.data.avg_duration % 60;
       this.avg_duration = (min < 10 ? '0' : '') + min + ':' + (sec < 10 ? '0' : '') + sec;

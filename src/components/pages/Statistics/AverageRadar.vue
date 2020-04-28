@@ -4,7 +4,6 @@
 
 <script>
 import axios from 'axios';
-import { env } from '../../../environment/env';
 import RadarChart from '../Charts/RadarChart';
 
 export default {
@@ -61,7 +60,7 @@ export default {
     };
   },
   created() {
-    axios.get(`${env.base_url}/statistics/avg-profile`).then(response => {
+    axios.get(`${process.env.VUE_APP_API}/statistics/avg-profile`).then(response => {
       if (!response || !response.data) {
         return;
       }

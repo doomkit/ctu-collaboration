@@ -6,7 +6,6 @@
 
 <script>
 import axios from 'axios';
-import { env } from '../../../environment/env';
 import BarChart from '../Charts/BarChart';
 
 export default {
@@ -78,7 +77,7 @@ export default {
     };
   },
   created() {
-    axios.get(`${env.base_url}/statistics/type-count`).then(response => {
+    axios.get(`${process.env.VUE_APP_API}/statistics/type-count`).then(response => {
       let types = [
         'education',
         'management',

@@ -53,7 +53,6 @@
 <script>
 import axios from 'axios';
 import moment from 'moment';
-import { env } from '../../environment/env';
 
 import Start from './Questionare/Start';
 import Question from './Questionare/Question';
@@ -94,7 +93,7 @@ export default {
       this.loadQuestion();
     },
     loadQuestion() {
-      axios.post(`${env.base_url}/test`, this.state).then(response => {
+      axios.post(`${process.env.VUE_APP_API}/test`, this.state).then(response => {
         this.state = response.data;
         if (this.state.end_time) {
           this.state.finished = true;

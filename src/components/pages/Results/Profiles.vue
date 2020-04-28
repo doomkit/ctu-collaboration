@@ -61,7 +61,6 @@
 import axios from 'axios';
 import moment from 'moment';
 
-import { env } from '../../../environment/env';
 import RadarChart from '../Charts/RadarChart';
 
 export default {
@@ -136,7 +135,7 @@ export default {
       return this.labels;
     },
     getAvgProfile(callback) {
-      axios.get(`${env.base_url}/statistics/avg-profile`).then(response => {
+      axios.get(`${process.env.VUE_APP_API}/statistics/avg-profile`).then(response => {
         if (!response || !response.data) {
           return;
         }
@@ -159,7 +158,7 @@ export default {
     },
     getResultProfiles() {
       axios
-        .get(`${env.base_url}/results/${this.result_id}`)
+        .get(`${process.env.VUE_APP_API}/results/${this.result_id}`)
         .then(response => {
           this.$emit('comments', response.data.comments);
           this.$emit('loaded', true);

@@ -15,7 +15,6 @@
 import ResultsHeader from './Results/ResultsHeader';
 import Profiles from './Results/Profiles';
 import Comments from './Results/Comments';
-import { env } from '../../environment/env';
 
 export default {
   components: {
@@ -25,7 +24,7 @@ export default {
   },
   data() {
     return {
-      link: (env.base_url + '/results/' + this.$route.params.id).replace('api/', ''),
+      link: (process.env.VUE_APP_API + '/results/' + this.$route.params.id).replace('api/', ''),
       comments: undefined,
       loaded: false
     };
