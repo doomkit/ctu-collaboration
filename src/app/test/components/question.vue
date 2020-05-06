@@ -40,7 +40,7 @@
         :disabled="!selected"
         @click="next()"
       >
-        Next <i class="fas fa-chevron-right ml-2"></i>
+        {{ $t('test.next') }} <i class="fas fa-chevron-right ml-2"></i>
       </button>
     </div>
   </div>

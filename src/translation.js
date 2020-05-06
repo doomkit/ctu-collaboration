@@ -50,6 +50,7 @@ export const messages = {
       text_2: 'All answers will be saved ',
       anonymusly: 'anonymusly',
       start: 'Start test',
+      next: 'Next',
       question: 'Question №',
       thanks: 'Thank you for your time!',
       link_text: 'You can find your results',
@@ -141,7 +142,7 @@ export const messages = {
         text:
           'Uvažuje Vaše firma o spolupráci s technickou univerzitou? Lákají Vás výhody, které z takové spolupráce plynou? Už si představujete společné projekty a výzkumy?',
         text_2:
-          'Pokud jste alespoň na jednu z otázek uvedených výše odpověděli ano, jste tu správně. Tato stránka obsahuje průvodce spoluprací a nabízí udělat si test, zda jste na takovou spolupráci připraveni, případně upozorní na slabá místa.',
+          'Pokud jste alespoň na jednu z otázek uvedených výše odpověděli ano, jste tu správně. Tato aplikace obsahuje průvodce spoluprací a nabízí udělat si test, zda jste na takovou spolupráci připraveni, případně upozorní na slabá místa.',
         button: 'Test',
         alternative_text: 'Nebo prozkoumejte ',
         alternative_link: 'statistiky předchozích výsledků '
@@ -173,6 +174,7 @@ export const messages = {
       text_2: 'Všechny odpovědi budou uloženy ',
       anonymusly: 'anonymně',
       start: 'Zahájit test',
+      next: 'Dále',
       question: 'Otázka №',
       thanks: 'Děkuji vám za Váš čas!',
       link_text: 'Své výsledky můžete najít',
