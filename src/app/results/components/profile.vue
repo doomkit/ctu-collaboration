@@ -1,10 +1,8 @@
 <template>
   <div class="w-full sm:w-5/12 flex flex-col justify-between">
-    <h3 class="text-2xl">
-      {{ $t(`results.${type}`) }}
-    </h3>
+    <h3 class="text-2xl">{{ $t(`results.${type}`) }} <span class="text-red-700">*</span></h3>
     <p class="mb-2">
-      {{ $t('results.type') }}:
+      <span class="text-gray-600">{{ $t('results.type') }}: </span>
       <span class="font-bold">{{ $t('results.types.' + data.corresponding_type) }}</span>
     </p>
     <div class="flex flex-row justify-center items-center text-sm">
@@ -16,6 +14,12 @@
       {{ $t('results.avg_profile') }}
     </div>
     <RadarChart :data="chartData" :options="options" />
+    <div class="flex">
+      <span class="text-red-700 mr-2">*</span>
+      <p class="mb-4">
+        {{ $t(`results.info_${type}`) }}
+      </p>
+    </div>
   </div>
 </template>
 

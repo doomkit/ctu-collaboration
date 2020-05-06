@@ -77,7 +77,14 @@ export const messages = {
       secondary: 'Secondary profile',
       avg_profile: 'average profile',
       your_primary: 'your primary profile',
-      your_secondary: 'your secondary profile'
+      your_secondary: 'your secondary profile',
+      info:
+        'All parameters (specificity, communication etc.) that are used in charts below are described in section',
+      statistics: 'Statistics',
+      info_primary:
+        'Primary collaboration type is the most recommended type of cooperation, which was determined based on your answers. When choosing this type - the probability of success is going up.',
+      info_secondary:
+        "Secondary collaboration type is the second most recommended type of cooperation, which was determined based on your answers. This type is a suitable alternative if Primary type of cooperation doesn't fit you."
     },
     about: {
       title: 'About project',
@@ -201,7 +208,14 @@ export const messages = {
       secondary: 'Sekundární profil',
       avg_profile: 'průměrný profil',
       your_primary: 'váš primární profil',
-      your_secondary: 'váš sekundární profil'
+      your_secondary: 'váš sekundární profil',
+      info:
+        'Všechny parametry (specifikum, komunikace atd.), které jsou uvedené v následujících grafech jsou popsány na stránce',
+      statistics: 'Statistiky',
+      info_primary:
+        'Primárním typem spolupráce je nejvhodnější doporučený typ spolupráce, který byl určen na základě Vašich odpovědí. Při výběru tohoto typu - pravděpodobnost úspěšného dopadu spolupráce se zvyšuje.',
+      info_secondary:
+        'Sekundárním typem spolupráce je druhý nejvhodnější doporučený typ spolupráce, který byl určen na základě Vašich odpovědí. Tento typ je vhodnou alternativou v případě, že Vám nevyhovuje Primární typ spolupráce.'
     },
     about: {
       title: 'O projektu',

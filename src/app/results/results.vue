@@ -3,7 +3,7 @@
     <ResultsLink :link="link" />
     <div v-if="loaded" class="container m-auto px-4 pb-4 lg:px-16">
       <div class="test container rounded shadow-xl p-8 pb-2 bg-white mx-auto mb-8">
-        <ResultInfo :startDate="data.start_date" :completeDate="data.complete_date" class="mb-6" />
+        <ResultInfo :startDate="data.start_date" :completeDate="data.complete_date" />
         <div class="flex flex-row justify-between flex-wrap">
           <Profile
             v-if="data && data.primary_profile"
