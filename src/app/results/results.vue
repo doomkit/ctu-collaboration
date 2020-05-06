@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-gray-100 my-10 min-h-screen">
+  <main class="bg-gray-100 py-10 min-h-screen">
     <ResultsLink :link="link" />
     <div v-if="loaded" class="container m-auto px-4 pb-4 lg:px-16">
       <div class="test container rounded shadow-xl p-8 pb-2 bg-white mx-auto mb-8">
