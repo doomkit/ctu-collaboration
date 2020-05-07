@@ -107,7 +107,9 @@ export const messages = {
       last: 'Last test completed',
       duration: 'Durations longer than 60min are ignored',
       types: 'The most common types of cooperation',
-      score: 'Average readiness for cooperation',
+      rate: 'Test successful pass rate',
+      rate_text:
+        'The result is successful if at least 5 of the 7 parameters received more than 5 points (50% of the maximum).',
       params: {
         communication: 'communication',
         experience: 'experience',
@@ -116,6 +118,22 @@ export const messages = {
         people: 'people',
         resources: 'resources',
         specificity: 'specificity'
+      },
+      params_description: {
+        communication:
+          'this parameter is focused on how and how often you plan to communicate with the faculty and whether you have a designated person who will be in charge of managing communication in cooperation.',
+        experience:
+          'this parameter is focused on the previous experiences of your company and associated processes with that experiences.',
+        expectations:
+          'this parameter is focused on determining what your company expects from cooperation with the faculty, respects your wishes.',
+        knowledge:
+          'this parameter determines whether you have the knowledge or know-how in your company that you could possibly provide to the faculty, or you are interested in acquiring knowledge from the faculty.',
+        people:
+          'this parameter solves whether you have sufficient human capacity in your company for cooperation.',
+        resources:
+          'this parameter determines whether you have resources in your company that you could provide to the faculty as part of the cooperation.',
+        specificity:
+          'this parameter determines how well your answers correspond to the specified type of collaboration. Each type of collaboration has different influencing factors. This parameter includes, for example, the length of the collaboration, who needs to be included in the collaboration or in which premises the collaboration will take place.'
       }
     },
     404: {
@@ -238,7 +256,9 @@ export const messages = {
       last: 'Poslední test dokončen',
       duration: 'Trvání delší než 60 minut se ignoruje',
       types: 'Nejčastější typy spolupráce',
-      score: 'Průměrná připravenost na spolupráci',
+      rate: 'Úspěšnost vyplnění testu',
+      rate_text:
+        'Výsledek testu je považován za úspěšný, když že alespoň 5 ze 7 parametrů dostali více, než 5 bodů (50% od maximálního počtu).',
       params: {
         communication: 'komunikace',
         experience: 'zkušenost',
@@ -247,6 +267,22 @@ export const messages = {
         people: 'lidé',
         resources: 'zdroje',
         specificity: 'specifikum'
+      },
+      params_description: {
+        communication:
+          'tento parametr je zaměřen na to, jakým způsobem a jak často plánujete komunikovat s fakultou a zda máte určenou osobu, která bude mít na starosti řízení komunikace ve spolupráci.',
+        experience:
+          'tento parametr je zaměřen na předchozí zkušenosti Vaší firmy a spojené s tím procesy ve firmě.',
+        expectations:
+          'tento parametr je zaměřen na určení, co Vaše firma očekává od spolupráce s fakultou, respektuje Vaše přání.',
+        knowledge:
+          'tento parametr určuje, zda máte ve Vaší firmě znalosti nebo know-how, které byste chtěli poskytnout fakultě, nebo máte zájem o získání znalosti od fakulty.',
+        people:
+          'tento parametr řeší, zda máte ve Vaší firmě dostatečnou kapacitu zaměstnanců pro spolupráci.',
+        resources:
+          'tento parametr určuje, zda máte ve Vaší firmě zdroje, které byste mohli v rámci spolupráce poskytnout fakultě.',
+        specificity:
+          'tento parametr řeší, v jaké míře odpovídají určené typy spolupráce Vašim odpovědím. Každý typ spolupráce má jiné ovlivňující faktory. K tomuto parametru patří například délka spolupráce, koho do spolupráce je potřeba zahrnout nebo v jakých místnostech bude probíhat spolupráce.'
       }
     },
     404: {

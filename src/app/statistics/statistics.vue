@@ -9,11 +9,12 @@
       <p class="text-left lg:text-lg mb-8">
         {{ $t('statistics.subtitle') }}
       </p>
-      <div class="test container rounded shadow-xl p-8 bg-white mx-auto mb-8">
+
+      <div class="container rounded shadow-xl p-8 bg-white mx-auto mb-8">
         <h2 class="text-2xl">{{ $t('statistics.profile') }}</h2>
         <div class="flex flex-row justify-around flex-wrap">
           <div class="w-full sm:w-5/12 sm:mr-2 mb-8 sm:mb-0">
-            <AverageRadar v-on:params="onParams" :locale="$i18n.locale" />
+            <AverageRadar :locale="$i18n.locale" />
           </div>
           <div class="w-full sm:w-5/12 sm:ml-2 flex flex-col justify-between">
             <div>
@@ -38,14 +39,16 @@
           </div>
         </div>
       </div>
+
+      <ParamsInfo />
+
       <div class="test container flex flex-col lg:flex-row mx-auto">
         <div class="flex flex-col rounded shadow-xl p-8 bg-white mb-8 lg:mr-8 lg:mb-0 lg:w-2/3">
           <h2 class="text-lg">{{ $t('statistics.types') }}</h2>
           <CollaborationTypes :locale="$i18n.locale" />
         </div>
         <div class="flex flex-col justify-center rounded shadow-xl p-8 bg-white lg:w-1/3">
-          <SuccessChart :readiness="readiness" />
-          <h2 class="text-center text-lg pt-4">{{ $t('statistics.score') }}</h2>
+          <SuccessChart />
         </div>
       </div>
     </div>
@@ -59,19 +62,20 @@ import axios from 'axios';
 import AverageRadar from './components/average-radar';
 import SuccessChart from './components/success-chart';
 import CollaborationTypes from './components/collaboration-types';
+import ParamsInfo from './components/params-info';
 
 export default {
   components: {
     AverageRadar,
     SuccessChart,
-    CollaborationTypes
+    CollaborationTypes,
+    ParamsInfo
   },
   data() {
     return {
       avg_duration: null,
       total: null,
-      last_completion: null,
-      readiness: 0
+      last_completion: null
     };
   },
   async created() {
@@ -82,15 +86,6 @@ export default {
       this.total = response.data.total;
       this.last_completion = moment(response.data.last_completion).format('MMM DD YYYY, hh:mm');
     });
-  },
-  methods: {
-    onParams(values) {
-      let res = 0;
-      for (let key in values) {
-        res = res + values[key];
-      }
-      this.readiness = Math.round((res / 7) * 10);
-    }
   }
 };
 </script>
