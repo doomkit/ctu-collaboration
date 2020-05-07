@@ -39,6 +39,9 @@ export default {
           title: {
             display: false
           },
+          tooltips: {
+            enabled: false
+          },
           centerPercentage: 75,
           centerArea: {
             fontSize: '38px',
