@@ -9,7 +9,15 @@
     <div v-else class="text-blue-500 text-2xl mr-8">
       <i class="fas fa-info-circle"></i>
     </div>
-    <span>{{ $i18n.locale === 'en' ? item.content_en : item.content_cz }}</span>
+    <div>
+      <p
+        v-if="item.note_en || item.note_cz"
+        class="text-sm font-medium text-blue-700 inline-block pb-1"
+      >
+        {{ $i18n.locale === 'en' ? item.note_en : item.note_cz }}
+      </p>
+      <p>{{ $i18n.locale === 'en' ? item.content_en : item.content_cz }}</p>
+    </div>
   </div>
 </template>
 
