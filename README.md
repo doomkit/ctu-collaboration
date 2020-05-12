@@ -1,4 +1,4 @@
-# ctu-collaboration
+# Ctu Collaboration Client
 
 This application is available at [ctu-collaboration.cz](https://ctu-collaboration.cz/)
 
